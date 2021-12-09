@@ -1,0 +1,276 @@
+<head>
+<style>
+h1, p{
+    text-align: center;
+    color: cornsilk;
+}
+button{
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100px;
+}
+
+#raimbow{
+    border-collapse: collapse;
+    background-color: rgba(0 0 0 0.2);
+}
+
+#pixel{
+    border-collapse: collapse;
+    background: white;
+    margin: 0 0 0 0;
+}
+
+button:hover{
+    background: rgb(33, 49, 68);
+}
+
+body{
+    background-image: url('https://img.freepik.com/vecteurs-libre/fond-hexagonal-fonce-degrade-couleur_79603-1410.jpg?size=626&ext=jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    place-content: center;
+}
+
+
+.line{
+    display: none;
+}
+
+td, tr{
+    width: 20px;
+    height: 20px;
+    border-collapse: collapse;
+}
+
+.button{
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+
+td:hover{
+    border: 3px solid gray;
+}
+
+/*.v{
+    background: green;
+}
+
+.bm{
+    background: rgb(1, 1, 75);
+}
+
+.r{
+    background: hotpink;
+}
+
+.rg{
+    background: red;
+}
+
+.j{
+    background: yellow;
+}
+
+.o{
+    background: orange;
+}
+
+.w{
+    background: white;
+}*/
+
+#raimbow{
+    margin: 0px 0px 5px 0px;
+}
+</style>    
+</head>
+
+<body>
+<div>
+<h1>Pixel Art RSMA</h1>
+<p>Bonjour! prêts à colorier?</p>
+<button id="click" onclick="tabCrea()">Cliquez pour générer un tableau</button>
+<!--<button id="vanish" class="hidden" onclick="ligne('vanish')">Faire disparaître les lignes</button>-->
+<!--<button id="pop" class="hidden" onclick="ligne('pop')">Faire apparaître les lignes</button>-->
+
+<table>
+<tbody>
+
+</tbody>
+</table>
+
+<!--palette de couleur-->
+<table border="1px" id="raimbow" class="hidden" style="margin: 60px 0px 0px 0px" >
+    <tbody>
+    <!--rouge-->
+        <tr>
+            <td onclick="palette(this)" style="background: darkred;"></td>
+            <td onclick="palette(this)" style="background: firebrick;"></td>
+            <td onclick="palette(this)" style="background: crimson;"></td>
+            <td onclick="palette(this)" style="background: red;"></td>
+            <td onclick="palette(this)" style="background: orangered;"></td>
+        </tr>
+    <!--orange-->
+        <tr>
+            <td onclick="palette(this)" style="background: chocolate;"></td>
+            <td onclick="palette(this)" style="background: coral;"></td>
+            <td onclick="palette(this)" style="background: darkorange;"></td>
+            <td onclick="palette(this)" style="background: peru;"></td> 
+            <td onclick="palette(this)" style="background: darkgoldenrod;"></td>
+            <td onclick="palette(this)" style="background: orange;"></td> 
+            <td onclick="palette(this)" style="background: goldenrod;"></td>
+            <td onclick="palette(this)" style="background: khaki;"></td>
+        </tr>
+        <!--jaune-->
+        <tr>
+            <td onclick="palette(this)" style="background: gold;"></td>
+            <td onclick="palette(this)" style="background: yellow;"></td>
+        </tr>
+        <!--vert-->
+        <tr>
+            <td onclick="palette(this)" style="background: darkgreen;"></td>
+            <td onclick="palette(this)" style="background: green;"></td>
+            <td onclick="palette(this)" style="background: darkolivegreen"></td>
+            <td onclick="palette(this)" style="background: seagreen;"></td>
+            <td onclick="palette(this)" style="background: yellowgreen;"></td>
+            <td onclick="palette(this)" style="background: lime;"></td>
+            <td onclick="palette(this)" style="background: limegreen;"></td>
+            <td onclick="palette(this)" style="background: chartreuse;"></td>
+            <td onclick="palette(this)" style="background: lawngreen;"></td>
+            <td onclick="palette(this)" style="background: greenyellow;"></td>
+            <td onclick="palette(this)" style="background: springgreen;"></td>
+            <td onclick="palette(this)" style="background: lightgreen;"></td>
+        </tr>
+        <!--bleu-->
+        <tr>
+            <td onclick="palette(this)" style="background: darkblue;"></td>
+            <td onclick="palette(this)" style="background: royalblue;"></td>
+            <td onclick="palette(this)" style="background: blue;"></td>
+            <td onclick="palette(this)" style="background: dodgerblue;"></td>
+            <td onclick="palette(this)" style="background: deepskyblue;"></td>
+            <td onclick="palette(this)" style="background: darkturquoise;"></td>
+            <td onclick="palette(this)" style="background: aqua;"></td>
+            <td onclick="palette(this)" style="background: cyan;"></td>
+            <td onclick="palette(this)" style="background: aquamarine;"></td>
+            <td onclick="palette(this)" style="background: darkcyan;"></td>
+            <td onclick="palette(this)" style="background: teal;"></td>
+            <td onclick="palette(this)" style="background: lightskyblue;"></td>
+        </tr>
+        <!--violet/rose-->
+        <tr>
+            <td onclick="palette(this)" style="background: violet;"></td>
+            <td onclick="palette(this)" style="background: pink;"></td>
+            <td onclick="palette(this)" style="background: mediumpurple;"></td>
+            <td onclick="palette(this)" style="background: blueviolet;"></td>
+            <td onclick="palette(this)" style="background: violet;"></td>
+            <td onclick="palette(this)" style="background: mediumorchid;"></td>            
+            <td onclick="palette(this)" style="background: purple;"></td>
+            <td onclick="palette(this)" style="background: hotpink;"></td>
+            <td onclick="palette(this)" style="background: violet;"></td>
+            <td onclick="palette(this)" style="background: mediumvioletred;"></td>
+            <td onclick="palette(this)" style="background: pink;"></td>
+            <td onclick="palette(this)" style="background: mistyrose;"></td>
+            <td onclick="palette(this)" style="background: orchid;"></td>
+        </tr>
+        <!--le reste-->
+        <tr>
+            <td onclick="palette(this)" style="background: rgba(90, 36, 36, 0.678);"></td>
+            <td onclick="palette(this)" style="background: saddlebrown;"></td>
+            <td onclick="palette(this)" style="background: slategrey;"></td>
+            <td onclick="palette(this)" style="background: grey;"></td>
+            <td onclick="palette(this)" style="background: silver;"></td>
+            <td onclick="palette(this)" style="background: cornsilk;"></td>
+            <td onclick="palette(this)" style="background: white;"></td>
+            <td onclick="palette(this)" style="background: whitesmoke;"></td>
+            <td onclick="palette(this)" style="background: black;"></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+</body>
+<script>
+var a
+var w
+var td
+//création du tableau du pixel art
+function tabCrea(){
+    var couleur 
+    var y = document.getElementById("raimbow").classList.remove("hidden")
+    var body = document.getElementsByTagName("body")[0];
+    var table = document.getElementsByTagName("table")[0];
+    table.id = 'pixel'
+    var tbody = document.getElementsByTagName("tbody")[0];
+
+    var lg = prompt("Nombre de lignes");
+    var cln = prompt("Nombre de colonnes");
+    console.log(lg);
+    console.log(cln);
+    x = parseInt(lg);
+    y = parseInt(cln);
+    console.log(typeof x);
+    console.log(typeof y);
+
+    for (var i = 0; i < x; i++){
+        var tr = document.createElement("tr")
+        tr.id = 'raw'+i
+
+        for ( var j = 0; j < y; j++){
+            td = document.createElement("td")
+            td.id = 'cln-'+i+'-'+j
+            a = td.id
+
+            td.onclick = function() {couleurs(this)};
+
+            tr.appendChild(td)
+            }
+            tbody.appendChild(tr)
+        }
+    
+    table.appendChild(tbody)
+    body.appendChild(table)
+    table.setAttribute("border","1")
+
+    var a = document.getElementById("click").classList.add("button")
+    //var b = document.getElementById("pop").classList.remove("hidden") 
+    //var c = document.getElementById("vanish").classList.remove("hidden")
+}
+
+//fonction qui retire/remet les lignes, pour apporter une meilleure visibilté au rendu final du pixel art
+function ligne(k){
+    if(k=="vanish"){
+        var l = document.getElementsByTagName("table")[1].classList.add("line")
+    }
+    else if(k=="pop"){
+        var l = document.getElementsByTagName("table")[1].classList.remove("line")        
+    }
+}
+var couleur 
+var temp
+
+//fonction pour le remplissage du pixel art
+function palette(x){
+    console.log(x)
+    couleur = x.style.background
+    console.log('color: '+couleur)
+
+    //var t =document.getElementsByTagName("td")[11].onclick = function() {couleur(couleur)};
+
+    
+    //function couleur_2(){
+        //    temp = this.td
+        //    console.log(temp)
+        //}
+        
+    }
+    function couleurs(y){
+        console.log(y)
+          y.style.background=couleur
+    }
+    
+</script>
